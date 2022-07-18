@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Do-App</title>
+     </head>
+    <body>
+           <header  class="site-header">
+            <form class="add-new-to-do" id="add-new-to-do">
+                <input id="input-item" type=text placeholder="Add to your list...">
+                <button type="submit" id="addtask">Add</button>
+            </form>
+        </header>
+            <main class="To-do-list-section">
+                     <section class="tasks-section">
+                         <span id="error"></span>
+                            <div class="tasks">
+                                <div class="task">
+                                    <div class="task-content">
+                                        <input type="text" name="text" id="text" readonLy />
+                                    </div>
+                                    <div class="action">
+                                        <button id="edit">Edit</button>
+                                        <button id="deletebtn">Delete</button>
+                                    </div>
+                                </div> 
+                            </div>
+                     </section>
+                  
+                     <footer class="task-status" id="task-status">
+                        <button class="clear-list" onclick="clearAllCompletedTasks()">clear all completed</button>
+                    </footer>
+            </main>
+            
+       <script src="main.js"></script>
+    </body>
+    </html>
