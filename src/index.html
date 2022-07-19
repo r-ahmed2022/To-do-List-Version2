@@ -6,29 +6,22 @@
      </head>
     <body>
            <header  class="site-header">
+            <h1 class="title-text">To Do List App</h1>
             <form class="add-new-to-do" id="add-new-to-do">
-                <input id="input-item" type=text placeholder="Add to your list...">
-                <button type="submit" id="addtask">Add</button>
+                <input id="input-item" type=text placeholder="Add to your list..." />
+                <input type="submit"value="Add" id="addtask" />
             </form>
         </header>
             <main class="To-do-list-section">
                      <section class="tasks-section">
                          <span id="error"></span>
-                            <div class="tasks">
-                                <div class="task">
-                                    <div class="task-content">
-                                        <input type="text" name="text" id="text" readonLy />
-                                    </div>
-                                    <div class="action">
-                                        <button id="edit">Edit</button>
-                                        <button id="deletebtn">Delete</button>
-                                    </div>
-                                </div> 
+                            <div class="tasks" id="tasks">
+                             
                             </div>
                      </section>
                   
                      <footer class="task-status" id="task-status">
-                        <button class="clear-list" onclick="clearAllCompletedTasks()">clear all completed</button>
+                        <button onclick="clearAllCompletedTasks()">clear all completed</button>
                     </footer>
             </main>
             

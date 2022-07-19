@@ -9,29 +9,151 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background: #374151;
-}
+ }
 
 .site-header {
+  padding: 1rem;
   margin: 0 auto;
   max-width: 960px;
   width: 100%;
-  border: 2px solid greenyellow;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-text {
+   margin-bottom: 1rem;
+   padding: 0;
+   font-size: 2rem;
+   font-weight: 300;
+   align-self: start;
+   color: #fff;
 }
 
 .add-new-to-do {
   display: flex;
-}
+  width: 100%;
+  }
 
-.add-new-to-do #input-item {
+  input, button {
+    border: none;
+    background: none;
+    appearance: none;
+    outline: none;
+  }
+
+  #error {
+    color: #fff;
+  }
+
+  button {
+    background-image: linear-gradient(to right, #ec4899, purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+.add-new-to-do > #input-item {
   padding: 1rem 2rem;
+  flex: 4 1 0%;
   border-radius: 5px;
   background: none;
   border: none;
+  background:  #000;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.add-new-to-do #input-item::placeholder {
+  font-size: 1rem;
+  
+}
+
+.add-new-to-do > #addtask {
+  flex: 1 1 0%;
+   background-image: linear-gradient(to right, #ec4899, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.4s;
+  text-transform: uppercase;
 }
 
 .To-do-list-section  {
   margin: 0 auto;
   max-width: 960px;
   width: 100%;
-  border: 2px solid black;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-content {
+  flex: 4 1 0%;
+  }
+
+.task-content > input {
+  width: 90%;
+  padding: 1rem 2rem;
+  flex: 3 1 0%;
+  border-radius: 5px;
+  background: none;
+  border: none;
+  background:  #000;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+}
+
+.completed {
+  flex: 1 1 0%;
+}
+
+.task-content > input:not(:read-only) {
+  color: #ec4899;
+}
+
+.action {
+  flex: 1 1 0%;
+  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.action button {
+  padding: 1rem;
+  margin: 0 5px;
+  background-image: linear-gradient(to right, #ec4899, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.task .action  .deletebtn {
+  color: crimson;
+}
+
+.task-status {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  opacity: 1;
+  cursor: pointer;
 }
