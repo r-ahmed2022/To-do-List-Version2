@@ -1,17 +1,6 @@
 import _ from 'lodash';
 import './style.css'
-
-const task = new Tasks();
-const form = document.getElementById('add-new-to-do');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (document.getElementById('input-item').value === '') {
-    document.getElementById('error').innerHTML = 'please add task first';
-  } else {
-    task.addTasks();
-  }
-});
-
+/*
 window.changed = (i, item) => {
   const change = JSON.parse(localStorage.getItem('tasks'));
   for (let j = 0; j < change.length; j += 1) {
@@ -22,6 +11,8 @@ window.changed = (i, item) => {
   }
   window.location.reload();
 };
+
+
 
 setInterval(() => {
   const countmsg = document.getElementById('msgs');
@@ -77,7 +68,54 @@ window.clearAllCompletedTasks = () => {
     }
   }
 };
+  */
+/* ------- New code start ------*/
 
-document.addEventListener('DOMContentLoaded', () => {
-  showTasks(task);
+window.addEventListener('load', () => {
+  const submit = document.querySelector('#add-new-to-do');
+  const task_list = document.querySelector('#tasks');
+  const task = document.querySelector('#input-item');
+
+
+submit.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (task.value === '') {
+    document.getElementById('error').innerHTML = 'please add task first';
+  } else {
+      document.getElementById('error').innerHTML = '';
+      const task_text = task.value
+      const task_div = document.createElement('div');
+      task_div.classList.add('task');
+      const task_content = document.createElement('div');
+      task_content.classList.add('task-content');
+      task_div.append(task_content);
+      const check = document.createElement('input');
+      check.type = 'checkbox';
+      check.classList.add('completed');
+      task_content.append(check);
+      const input = document.createElement('input');
+      input.type =  'text';
+      input.setAttribute('id', 'text');
+      input.setAttribute('readonLy', 'readonLy');
+      input.value = task_text;
+      task_content.append(input);
+      const action = document.createElement('div');
+      action.classList.add('action');
+      const edit = document.createElement('button');
+      edit.setAttribute('id', 'edit');
+      const deletebtn = document.createElement('button');
+      deletebtn.setAttribute('id', 'deletebtn');
+      action.append(edit);
+      action.append(deletebtn);
+      task_div.append(action);
+      task_list.append(task_div);
+    }
+  
 });
+  
+
+  
+});
+
+/*-------  New code ends ----*/
+
