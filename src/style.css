@@ -39,6 +39,7 @@ body {
     background: none;
     appearance: none;
     outline: none;
+    margin: 0 1rem;
   }
 
   #error {
@@ -48,6 +49,7 @@ body {
   button {
     background-image: linear-gradient(to right, #ec4899, purple);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.25rem;
     font-weight: 700;
@@ -72,8 +74,9 @@ body {
 
 .add-new-to-do > #addtask {
   flex: 1 1 0%;
-   background-image: linear-gradient(to right, #ec4899, purple);
+  background-image: linear-gradient(to right, #ec4899, purple);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.25rem;
   font-weight: 700;
@@ -83,6 +86,7 @@ body {
 }
 
 .To-do-list-section  {
+  padding: 1rem;
   margin: 0 auto;
   max-width: 960px;
   width: 100%;
@@ -92,33 +96,43 @@ body {
 .tasks {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .task-content {
-  flex: 4 1 0%;
+  display: flex;
+  justify-content: space-between;
+  flex: 7 1 0%;
   }
 
-.task-content > input {
-  width: 90%;
+  .task-content .completed {
+    margin: 4px 0;
+    min-width: 30px;
+    flex: 0 1 0%;
+    height: auto;
+    padding: 0 4px;
+    border-radius: 5px;
+    margin: 0 1rem;
+    background: #fff;
+    color: #000;
+    justify-self: flex-start;
+    display: block;
+    }
+
+.task-content .text {
   padding: 1rem 2rem;
-  flex: 3 1 0%;
+  flex: 4 1 0%;
   border-radius: 5px;
-  background: none;
-  border: none;
   background:  #000;
   color: #fff;
   font-size: 1rem;
   display: block;
-}
-
-.completed {
-  flex: 1 1 0%;
 }
 
 .task-content > input:not(:read-only) {
@@ -126,20 +140,22 @@ body {
 }
 
 .action {
-  flex: 1 1 0%;
+  flex: 1 1 100px;
+  width: 20%;
   align-items: start;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   cursor: pointer;
-}
+  margin: 0;
+  }
 
-.action button {
+.edit, .deletebtn {
   padding: 1rem;
-  margin: 0 5px;
   background-image: linear-gradient(to right, #ec4899, purple);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   margin: 0 0.5rem;
@@ -156,4 +172,23 @@ body {
   justify-content: center;
   opacity: 1;
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+   .task {
+    width: 100%;
+   }
+
+    .action {
+     width: auto;
+     justify-content: space-evenly;
+     align-items: center;
+   }
+
+   .action > button {
+    font-size: 0.9rem;
+     margin: 10px 2px;
+     padding: 0 4px;
+   }
+   
 }
